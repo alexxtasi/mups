@@ -1,0 +1,417 @@
+{
+  "title": "2FA",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "3": {
+      "title": "implementations",
+      "id": 16,
+      "ideas": {
+        "1": {
+          "title": "OTP (disconected tokens)",
+          "id": 7,
+          "ideas": {
+            "1": {
+              "title": "hardware tokens (connected)",
+              "id": 35,
+              "ideas": {}
+            },
+            "2": {
+              "title": "software tokens (disconnected)",
+              "id": 37,
+              "ideas": {
+                "1": {
+                  "title": "Google-Authenticator",
+                  "id": 61,
+                  "ideas": {
+                    "2": {
+                      "title": "HOTP (RFC 4226)        TOTP (RFC 6238)",
+                      "id": 65,
+                      "ideas": {}
+                    },
+                    "4": {
+                      "title": "sms-gateway",
+                      "id": 67
+                    },
+                    "5": {
+                      "title": "existing PKI",
+                      "id": 68
+                    },
+                    "0.5": {
+                      "title": "NTP - Network Time Protool",
+                      "id": 69
+                    },
+                    "1.5": {
+                      "title": "Authentication Implementation already userd (kerberos, SSO, pam, GSSAPI, user-db, Radius-LDAP)",
+                      "id": 66
+                    },
+                    "1.75": {
+                      "title": "PAM",
+                      "id": 63
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "SMS - OTP",
+              "id": 38
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "2": {
+          "title": "PKI (connected tokens)",
+          "id": 3,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "usb - keys",
+              "id": 39
+            },
+            "2": {
+              "title": "smartcards (pin protected)",
+              "id": 40
+            },
+            "3": {
+              "title": "RFID's - wireless",
+              "id": 41
+            },
+            "4": {
+              "title": "soft-tokens",
+              "id": 42
+            },
+            "5": {
+              "title": "soft-tokens on mobile",
+              "id": 43
+            }
+          }
+        },
+        "3": {
+          "title": "MobilePKI",
+          "id": 6,
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "STK (SIM Application Toolki)",
+              "id": 44
+            },
+            "2": {
+              "title": "Java Card",
+              "id": 45
+            }
+          }
+        }
+      }
+    },
+    "4": {
+      "title": "2FA from a user's perspective",
+      "id": 71,
+      "ideas": {
+        "1": {
+          "title": "1. provide login credentials (to vpn or to a webpage)",
+          "id": 73
+        },
+        "2": {
+          "title": "3. passcode generation (mobile application, hardware token) or delivery (sms, voice call) - invisible to the user",
+          "id": 74
+        },
+        "3": {
+          "title": "5. in case of problems (token loss, sms delivery problems, etc...) provide previously known Recovery Code",
+          "id": 75
+        },
+        "4": {
+          "title": "6. OR... fallback sms-number (secondary mobile phone)",
+          "id": 77
+        },
+        "5": {
+          "title": "7. last... pregenerated passcoeds (printed TAN list)",
+          "id": 78
+        },
+        "2.25": {
+          "title": "4. provide passcode and proceed to authentication",
+          "id": 81
+        },
+        "1.5": {
+          "title": "2. if this is done from an authorized (trusted) device (for the system) - proceed to authentication",
+          "id": 76
+        }
+      }
+    },
+    "-2": {
+      "title": "theory",
+      "id": 15,
+      "ideas": {
+        "6": {
+          "title": "Authentication (the process where an entity's identity is authenticated)",
+          "id": 83,
+          "ideas": {
+            "1": {
+              "title": "Strong Authentication (1.layered authentication approach relying on two or more authenticators to establish the identity of an originator or receiver of information 2. the verification is accomplished without the transmission of a password)",
+              "id": 80,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                },
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "<a href=\"http://en.wikipedia.org/wiki/Strong_authentication\">Strong Authentication</a>"
+                }
+              }
+            },
+            "2": {
+              "title": "Multi-factor authentication (MFA)",
+              "id": 30,
+              "ideas": {
+                "1": {
+                  "title": "3rd Factor: Inherence factor - something the user is (fingerprint, biometrics)",
+                  "id": 22,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Limitations - Issues",
+                  "id": 17,
+                  "ideas": {
+                    "1": {
+                      "title": "Man-In-the-Middle attack (MitM)",
+                      "id": 24,
+                      "ideas": {}
+                    },
+                    "2": {
+                      "title": "Man-In-the-Browser (MitB)",
+                      "id": 26
+                    },
+                    "3": {
+                      "title": "Man-In-the-Mobile (MitMo)",
+                      "id": 28
+                    },
+                    "4": {
+                      "title": "Out-of-Band Authentication (two separate networks or channels)",
+                      "attr": {
+                        "style": {
+                          "background": "#E0E0E0"
+                        }
+                      },
+                      "id": 46
+                    },
+                    "5": {
+                      "title": "Trojan Horses",
+                      "id": 47
+                    },
+                    "6": {
+                      "title": "(Pseudo - ) Random password generator",
+                      "id": 48
+                    },
+                    "7": {
+                      "title": "SMS delivery delay (loss of passcodes)",
+                      "id": 49
+                    },
+                    "8": {
+                      "title": "time synchronization (server - token)",
+                      "id": 50
+                    },
+                    "9": {
+                      "title": "token loss (eg mobile)",
+                      "id": 58
+                    },
+                    "10": {
+                      "title": "sms - no signal",
+                      "id": 59
+                    },
+                    "11": {
+                      "title": "hardware tokens... (misplacing, loss, replacing due to misplacing or loss, becomes another device to look after)",
+                      "id": 60
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "cost",
+                  "id": 52,
+                  "ideas": {
+                    "1": {
+                      "title": "1. hardware tokens",
+                      "id": 54
+                    },
+                    "2": {
+                      "title": "2. sms - otp",
+                      "id": 55
+                    },
+                    "3": {
+                      "title": "3. mobile devices",
+                      "id": 56
+                    },
+                    "4": {
+                      "title": "4. printed lists",
+                      "id": 57
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "1st Factor: Knowledge factor- something the user knows (password - static password, card, pin)",
+                  "id": 19,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                },
+                "0.75": {
+                  "title": "2nd Factor: Possesion factor - something the user has (card, phone, otp - passcode - dynamic password)",
+                  "id": 21,
+                  "attr": {
+                    "style": {
+                      "background": "#99ccff"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "software tokens (disconnected tokens)",
+                      "id": 13,
+                      "ideas": {
+                        "1": {
+                          "title": "Counter synchronized token (sequence based)",
+                          "id": 31
+                        },
+                        "2": {
+                          "title": "Time synchronized token (time-based)",
+                          "id": 33
+                        },
+                        "3": {
+                          "title": "Challenge-based token",
+                          "id": 34
+                        },
+                        "4": {
+                          "title": "SMS",
+                          "id": 14,
+                          "ideas": {
+                            "1": {
+                              "title": "Out-of-Band Authentication (two separate networks or channels)",
+                              "id": 32,
+                              "attr": {
+                                "style": {
+                                  "background": "#E0E0E0"
+                                }
+                              }
+                            }
+                          },
+                          "attr": {
+                            "style": {
+                              "background": "#E0E0E0"
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "background": "#E0E0E0"
+                        }
+                      }
+                    },
+                    "0.5": {
+                      "title": "hardweare tokens (connected tokens)",
+                      "id": 11,
+                      "ideas": {},
+                      "attr": {
+                        "style": {
+                          "background": "#E0E0E0"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
+        },
+        "7": {
+          "title": "Authorization (the process that determines whether the entity is authorized to perform a given activity)",
+          "id": 84
+        },
+        "8": {
+          "title": "Accounting (the tracking of network resource consumption by users ???)",
+          "id": 85
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#E0E0E0"
+        }
+      }
+    }
+  },
+  "links": [],
+  "attr": {
+    "style": {
+      "background": "#22AAE0"
+    },
+    "progress-statuses": {
+      "": {
+        "description": "Not Started",
+        "priority": 1,
+        "style": {
+          "background": false
+        }
+      },
+      "passing": {
+        "description": "Done",
+        "style": {
+          "background": "#00CC00"
+        }
+      },
+      "under-review": {
+        "description": "Under review",
+        "style": {
+          "background": "#00CCFF"
+        }
+      },
+      "in-progress": {
+        "description": "In Progress",
+        "priority": 3,
+        "style": {
+          "background": "#FFCC00"
+        }
+      },
+      "blocked": {
+        "description": "Blocked",
+        "priority": 4,
+        "style": {
+          "background": "#990033"
+        }
+      },
+      "parked": {
+        "description": "Parked",
+        "priority": 2,
+        "style": {
+          "background": "#FF3300"
+        }
+      }
+    }
+  }
+}
